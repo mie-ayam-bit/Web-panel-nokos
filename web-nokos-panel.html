@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>RAZZ-STORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family:Poppins, sans-serif;
+      background:linear-gradient(180deg,#0f1220,#141728);
+      color:#fff;
+      padding:20px;
+    }
+
+    .container{max-width:1000px;margin:auto;}
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:25px;
+    }
+
+    .logo{
+      width:45px;height:45px;
+      background:linear-gradient(135deg,#2bd36b,#3db3ff);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:#001;
+    }
+
+    .hero{
+      background:rgba(255,255,255,0.03);
+      padding:25px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.4);
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:28px;
+      background:linear-gradient(90deg,#2bd36b,#3db3ff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .hero p{color:#aaa;margin-top:8px;}
+
+    .products{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-top:25px;
+    }
+
+    .card{
+      background:#1b2030;
+      border-radius:16px;
+      padding:20px;
+      text-align:center;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .card:hover{transform:scale(1.04);}
+
+    /* ===== NOKOS DETAIL ===== */
+    .nokos-detail{
+      margin-top:60px;
+      background:#1b2030;
+      padding:25px;
+      border-radius:18px;
+      display:none;
+    }
+
+    .price{
+      text-align:center;
+      font-size:26px;
+      color:#2bd36b;
+      font-weight:800;
+      margin:10px 0 20px;
+    }
+
+    .stok{
+      margin-top:15px;
+      background:#2bd36b;
+      color:#001;
+      padding:10px;
+      border-radius:10px;
+      text-align:center;
+      font-weight:700;
+    }
+
+    .order-btn{
+      display:block;
+      margin-top:20px;
+      background:#2bd36b;
+      color:#001;
+      padding:14px;
+      border-radius:14px;
+      text-align:center;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    /* ===== PANEL ===== */
+    .panel{
+      margin-top:60px;
+      background:#1b2030;
+      padding:20px;
+      border-radius:18px;
+      display:none;
+    }
+
+    .panel iframe{
+      width:100%;
+      height:600px;
+      border:none;
+      border-radius:12px;
+      background:#000;
+    }
+
+    /* ===== HUBUNGI KAMI ===== */
+    .contact{
+      margin-top:60px;
+      background:#1b2030;
+      padding:25px;
+      border-radius:18px;
+      text-align:center;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      margin:15px 0;
+    }
+
+    .btn{
+      flex:1;
+      padding:12px;
+      border-radius:14px;
+      font-weight:700;
+      text-decoration:none;
+      color:#000;
+    }
+
+    .wa{background:#2bd36b;}
+    .tg{background:#3db3ff;}
+
+    footer{
+      text-align:center;
+      color:#aaa;
+      font-size:13px;
+      margin-top:35px;
+    }
+
+    @media (max-width:600px){
+      .products{grid-template-columns:1fr;}
+      .buttons{flex-direction:column;}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo">RZ</div>
+    <b>RAZZ-STORE</b>
+  </header>
+
+  <section class="hero">
+    <h1>RAZZ-STORE</h1>
+    <p>Menyediakan NOKOS INDO & Panel Privat Pterodactyl</p>
+
+    <div class="products">
+      <!-- NOKOS -->
+      <div class="card" onclick="showNokos()">
+        <h3>🌐 NOKOS</h3>
+        <p>Indonesia</p>
+      </div>
+
+      <!-- PANEL -->
+      <div class="card" onclick="showPanel()">
+        <h3>🖥 Panel Privat</h3>
+        <p>Pterodactyl</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL NOKOS -->
+  <section id="nokos" class="nokos-detail">
+    <h2>🔐 NOKOS INDO FRESH</h2>
+    <div class="price">Rp 5.000 / Per Nomor</div>
+
+    <ul>
+      <li>✅ Nomor Indonesia fresh</li>
+      <li>✅ Siap pakai untuk bot</li>
+      <li>✅ Aman dari banned utama</li>
+      <li>✅ Instant delivery</li>
+    </ul>
+
+    <div class="stok">Stok selalu tersedia!</div>
+
+    <a class="order-btn" 
+       href="https://wa.me/6283870743979?text=Mas%20mau%20beli%20nokos%20indo%20fresh" 
+       target="_blank">
+       Pesan Sekarang via WhatsApp
+    </a>
+  </section>
+
+  <!-- PANEL DALAM WEB -->
+  <section id="panel" class="panel">
+    <h2>🖥 Panel Privat Pterodactyl</h2>
+    <iframe src="https://razz-store.vercel.app/"></iframe>
+  </section>
+
+  <!-- HUBUNGI KAMI -->
+  <section class="contact">
+    <h2>📞 Hubungi Kami</h2>
+
+    <div class="buttons">
+      <a class="btn wa" 
+         href="https://wa.me/6283870743979" 
+         target="_blank">
+         WhatsApp
+      </a>
+
+      <a class="btn tg" href="https://t.me/Permen1945" target="_blank">
+        Telegram
+      </a>
+    </div>
+  </section>
+
+  <footer>© 2025 RAZZ-STORE</footer>
+
+</div>
+
+<script>
+function showNokos(){
+  document.getElementById("panel").style.display = "none";
+  const nokos = document.getElementById("nokos");
+  nokos.style.display = "block";
+  nokos.scrollIntoView({behavior:"smooth"});
+}
+
+function showPanel(){
+  document.getElementById("nokos").style.display = "none";
+  const panel = document.getElementById("panel");
+  panel.style.display = "block";
+  panel.scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
